@@ -4,7 +4,7 @@
 
 module Template where
 
-import Types
+import Types (Key, Color)
 
 template T with
     owner : Party
