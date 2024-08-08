@@ -1,0 +1,13 @@
+-- Copyright (c) 2024 Digital Asset (Switzerland) GmbH and/or its affiliates. All rights reserved.
+-- SPDX-License-Identifier: Apache-2.0
+
+
+module Types where
+
+data Color = Red | Green | Blue | With | Black deriving (Eq, Show)
+
+data Key = Key { maintainer: Party, id: Int, extraId: Optional Int, extraExtraId: Optional Int } deriving (Eq, Show)
+
+data Key2 = Key2 { maintainer: Party, id: Text, extraId: Optional Text } deriving (Eq, Show)
+
+data Key3 = Key3 { maintainer: Party, id: Numeric 10 } deriving (Eq, Show)

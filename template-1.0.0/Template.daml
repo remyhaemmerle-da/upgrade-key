@@ -1,0 +1,18 @@
+-- Copyright (c) 2024 Digital Asset (Switzerland) GmbH and/or its affiliates. All rights reserved.
+-- SPDX-License-Identifier: Apache-2.0
+
+
+module Template where
+
+import Types
+
+template T with
+    owner : Party
+    color: Color
+    k: Key
+  where
+    signatory [owner, k.maintainer]
+    key k: Key
+    maintainer key.maintainer
+
+

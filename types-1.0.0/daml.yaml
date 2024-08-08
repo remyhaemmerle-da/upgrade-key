@@ -1,0 +1,10 @@
+sdk-version: 2.9.3
+name: types
+version: 1.0.0
+source: Types.daml
+dependencies:
+- daml-prim
+- daml-stdlib
+- daml-script-beta
+build-options:
+- --target=1.16

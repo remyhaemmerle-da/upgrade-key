@@ -1,0 +1,20 @@
+sdk-version: 2.9.3
+name: template
+version: 2.0.0
+source: Template.daml
+parties:
+- Alice
+- Bob
+upgrades: ../template-1.0.0/.daml/dist/template-1.0.0.dar
+dependencies:
+- daml-prim
+- daml-stdlib
+- daml-script-beta
+data-dependencies:
+- ../types-1.0.0/.daml/dist/types-1.0.0.dar
+- ../types-2.0.0/.daml/dist/types-2.0.0.dar
+build-options:
+- --target=1.16
+module-prefixes:
+  types-1.0.0: V1
+  types-2.0.0: V2
