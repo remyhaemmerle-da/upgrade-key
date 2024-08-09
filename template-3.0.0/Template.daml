@@ -12,6 +12,7 @@ module Template where
 import V1.Types (Key)
 import V2.Types (Key2)
 import V3.Types (Key3, Color(..))
+import qualified V2.Template as V2
 
 template T with
     owner : Party
@@ -25,10 +26,10 @@ template T with
 template T2 with
     owner : Party
     color: Color
-    k: Key2
+    k: Key3
   where
     signatory [owner, k.maintainer]
-    key k: Key2
+    key k: Key3
     maintainer key.maintainer
 
 
@@ -40,3 +41,5 @@ template T3 with
     signatory [owner, k.maintainer]
     key k: Key3
     maintainer key.maintainer
+
+data D = D {a : V2.T}

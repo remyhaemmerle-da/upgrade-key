@@ -5,7 +5,7 @@ source: Template.daml
 parties:
 - Alice
 - Bob
-upgrades: ../template-2.0.0/.daml/dist/template-2.0.0.dar
+upgrades: ../template-1.0.0/.daml/dist/template-1.0.0.dar
 dependencies:
 - daml-prim
 - daml-stdlib
@@ -14,9 +14,11 @@ data-dependencies:
 - ../types-1.0.0/.daml/dist/types-1.0.0.dar
 - ../types-2.0.0/.daml/dist/types-2.0.0.dar
 - ../types-3.0.0/.daml/dist/types-3.0.0.dar
+- ../template-2.0.0/.daml/dist/template-2.0.0.dar
 build-options:
 - --target=1.16
 module-prefixes:
   types-1.0.0: V1
   types-2.0.0: V2
   types-3.0.0: V3
+  template-2.0.0: V2
