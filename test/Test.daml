@@ -1,17 +1,33 @@
 module Test where
 
-import V1.Types as V1
-import V1.Template as V1
-import V2.Types as V2
-import V2.Template as V2
--- import V3.Types as V3
--- import V3.Template as V3
+import Template
+import Interface
 
 import Daml.Script
 
-init = script do
-  alice <- allocateParty "Alice"
-  submit alice do
-    createExactCmd (V2.T alice V2.White (V1.Key alice 1))
+template Helper
+  with
+    owner: Party
+  where
+    signatory owner
+    choice Bug : () with
+        cid : ContractId I
+      controller owner
+         do
+          fetch cid
+          pure ()
+
+setup = script do
+-- user_setup_begin
+  alice <- allocatePartyWithHint "Alice" (PartyIdHint "Alice")
+  aliceId <- validateUserId "Alice"
+  createUser (User aliceId (Some alice)) [CanActAs alice]
+-- user_setup_end
+  cid <- submit alice do
+    createCmd (T alice)
+  _ <- submit alice do
+    createAndExerciseCmd (Helper alice) (Bug $ coerceContractId cid)
+  pure ()
+
 
 

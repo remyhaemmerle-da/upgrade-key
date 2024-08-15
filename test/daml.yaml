@@ -2,13 +2,13 @@ sdk-version: 2.9.3
 name: test
 version: 1.0.0
 source: Test.daml
-init-script: Test:init
+
 parties:
 - Alice
 dependencies:
 - daml-prim
 - daml-stdlib
-- daml-script-beta
+- daml-script
 data-dependencies:
 - ../template-1.0.0/.daml/dist/template-1.0.0.dar
 - ../interface-1.0.0/.daml/dist/interface-1.0.0.dar
