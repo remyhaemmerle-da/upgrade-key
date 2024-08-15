@@ -5,6 +5,5 @@ source: Template.daml
 dependencies:
 - daml-prim
 - daml-stdlib
-- daml-script-beta
 build-options:
 - --target=1.15
