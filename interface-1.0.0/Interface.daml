@@ -4,7 +4,7 @@
 
 module Interface where
 
-import Template
+import T.Template
 
 data IView = IView {}
 
