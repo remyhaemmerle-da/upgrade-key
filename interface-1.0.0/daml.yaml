@@ -2,12 +2,11 @@ sdk-version: 2.9.3
 name: interface
 version: 1.0.0
 source: Interface.daml
-parties:
-- Alice
-- Bob
 dependencies:
 - daml-prim
 - daml-stdlib
 data-dependencies:
+upgrades:
+  ../template-1.0.0/.daml/dist/template-1.0.0.dar
 build-options:
 - --target=1.15
