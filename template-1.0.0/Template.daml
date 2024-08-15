@@ -4,15 +4,10 @@
 
 module Template where
 
-import Types (Key, Color)
-
 template T with
     owner : Party
-    color: Color
-    k: Key
   where
-    signatory [owner, k.maintainer]
-    key k: Key
-    maintainer key.maintainer
+    signatory owner
+
 
 
